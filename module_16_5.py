@@ -61,10 +61,3 @@ def delete_user(user_id: int):
         if user.id == user_id:
             return users.pop(index)
     raise HTTPException(status_code=404, detail="User was not found")
-
-# Создание нескольких пользователей для тестирования
-@app.on_event("startup")
-def create_initial_users():
-    create_user("UrbanUser", 24)
-    create_user("UrbanTest", 22)
-    create_user("Capybara", 60)
